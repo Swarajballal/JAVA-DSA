@@ -22,8 +22,46 @@ we can cast to also byte. but there is loss of precision and data because data i
 # For both implicit and explicit type casting we need to have compatible data types.
 int cant be converted to string and vice versa.
 # vvimp we can explicitly convert int to float and vice versa.
-implicity type casting between int and float is possible.
-it is possible to convert int to float implicitly because float has higher range than int.
+implicitly type casting between int and float is possible.
+it is possible to convert int to float implicitly because float has higher range than int same for double and long.
 but it is not possible to convert float to int here we have to do explicit type casting.
 
+public class Hello2 {
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = 25;
+		float b = 42.159f;
+		double value = a*a + 2*(a*b) + b*b;
+		System.out.println(value);
+		
+
+	}
+
+}
+output : 4510.3310546875
+didn't lose any precision because we are using double.
+# for int value = (int)(a*a + 2*(a*b) + b*b);
+
+# mostly use double instead of float because double has higher range than float and double is more precise than float.
+
+![img_2.png](img_2.png)
+const and goto are reserved keywords but not used in java.
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
+![img_5.png](img_5.png)
+![img_6.png](img_6.png)
+![img_7.png](img_7.png)
+![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+![img_11.png](img_11.png)
+![img_12.png](img_12.png)
+![img_13.png](img_13.png)
+![img_14.png](img_14.png)
+![img_15.png](img_15.png)
+![img_16.png](img_16.png)
+![img_17.png](img_17.png)
+![img_18.png](img_18.png)
+![img_19.png](img_19.png)
+![img_20.png](img_20.png)

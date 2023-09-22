@@ -39,7 +39,7 @@ BigDecimal d2 = new BigDecimal(2.55);
 System.out.println(d1.add(d2)); // 3.59
 instead use string then rounding up will be disabled. and we will get 3.6
 big decimal is used for high precision calculations.
-so big decimal can solve the issue of rouding up in java.
+so big decimal can solve the issue of rounding up in java.
 
 # Strings
 String is a sequence of characters.
