@@ -65,3 +65,27 @@ const and goto are reserved keywords but not used in java.
 ![img_18.png](img_18.png)
 ![img_19.png](img_19.png)
 ![img_20.png](img_20.png)
+
+
+# Operators
+
+# ternary operator similar to javascript
+(condition) ? (if true) : (if false)
+# Assignment Operators
+=, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=, >>>=
+# vvimp in if condition if we dont put scope brackets then the next line will be considered as the scope of if condition. same for else
+int x = 2; 
+if (x==2);
+system.out.println("Hello");
+here Hello will be printed because the next line is considered as the scope of if condition. and ; wont cause any error.
+
+![img_21.png](img_21.png)
+![img_22.png](img_22.png)
+![img_23.png](img_23.png)
+![img_24.png](img_24.png)
+![img_25.png](img_25.png)
+![img_26.png](img_26.png)
+![img_27.png](img_27.png)
+![img_28.png](img_28.png)
+![img_29.png](img_29.png)
+![img_30.png](img_30.png)
