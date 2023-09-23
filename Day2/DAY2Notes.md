@@ -66,7 +66,6 @@ const and goto are reserved keywords but not used in java.
 ![img_19.png](img_19.png)
 ![img_20.png](img_20.png)
 
-
 # Operators
 
 # ternary operator similar to javascript
@@ -89,3 +88,61 @@ here Hello will be printed because the next line is considered as the scope of i
 ![img_28.png](img_28.png)
 ![img_29.png](img_29.png)
 ![img_30.png](img_30.png)
+![img_31.png](img_31.png)
+![img_32.png](img_32.png)
+![img_33.png](img_33.png)
+![img_34.png](img_34.png)
+
+# Switch Statement
+
+switch(expression) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    case value3:
+        // code
+        break;
+    default:
+        // code
+        break;
+}
+
+sequence of writing does not matter in switch case.
+any switch case can be written using if else ladder. we cant use float and double in switch case. we can only use int enum and char in switch case and also string.
+They are case sensitive. 
+
+you can even write 
+
+case 'a':
+case 'A':
+    // code
+    break;
+
+for both case same code will be executed.
+
+# infinite loop in for loop condition for(;;) or while(true) or do while(true)
+# loops has initialisation, condition and increment/decrement.
+
+do {
+} while (condition);
+
+
+# sophisticated for loop you can even use or operator in condition
+for (int i = 0, j = 0; i < 10 && j < 10; i++, j++) {
+    // code
+}
+
+break terminates the loop and continue skips the current iteration and goes to the next iteration.
+
+Quiz
+
+![img_35.png](img_35.png)
+![img_36.png](img_36.png)
+![img_37.png](img_37.png)
+![img_38.png](img_38.png)
+![img_39.png](img_39.png)
+![img_40.png](img_40.png)
+![img_41.png](img_41.png)
