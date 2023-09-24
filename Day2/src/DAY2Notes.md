@@ -6,7 +6,7 @@ short x = 5;
 int y = x;
 this is an example of implicit type casting. The compiler automatically converts the value of x to an int and assigns it to y.
 but if we do vice versa then will be an error because the compiler cannot convert an int to a short.
-![img.png](img.png)
+![img.png](../img.png)
 # it depends on type implicit type casting or automatic typecasting needs to have same or higher range of same data type.
 float and int are not compatible with each other. so we need to do explicit type casting.
 check the above image for more details.
@@ -45,26 +45,26 @@ didn't lose any precision because we are using double.
 
 # mostly use double instead of float because double has higher range than float and double is more precise than float.
 
-![img_2.png](img_2.png)
+![img_2.png](../img_2.png)
 const and goto are reserved keywords but not used in java.
-![img_3.png](img_3.png)
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
-![img_6.png](img_6.png)
-![img_7.png](img_7.png)
-![img_8.png](img_8.png)
-![img_9.png](img_9.png)
-![img_10.png](img_10.png)
-![img_11.png](img_11.png)
-![img_12.png](img_12.png)
-![img_13.png](img_13.png)
-![img_14.png](img_14.png)
-![img_15.png](img_15.png)
-![img_16.png](img_16.png)
-![img_17.png](img_17.png)
-![img_18.png](img_18.png)
-![img_19.png](img_19.png)
-![img_20.png](img_20.png)
+![img_3.png](../img_3.png)
+![img_4.png](../img_4.png)
+![img_5.png](../img_5.png)
+![img_6.png](../img_6.png)
+![img_7.png](../img_7.png)
+![img_8.png](../img_8.png)
+![img_9.png](../img_9.png)
+![img_10.png](../img_10.png)
+![img_11.png](../img_11.png)
+![img_12.png](../img_12.png)
+![img_13.png](../img_13.png)
+![img_14.png](../img_14.png)
+![img_15.png](../img_15.png)
+![img_16.png](../img_16.png)
+![img_17.png](../img_17.png)
+![img_18.png](../img_18.png)
+![img_19.png](../img_19.png)
+![img_20.png](../img_20.png)
 
 # Operators
 
@@ -78,20 +78,20 @@ if (x==2);
 system.out.println("Hello");
 here Hello will be printed because the next line is considered as the scope of if condition. and ; wont cause any error.
 
-![img_21.png](img_21.png)
-![img_22.png](img_22.png)
-![img_23.png](img_23.png)
-![img_24.png](img_24.png)
-![img_25.png](img_25.png)
-![img_26.png](img_26.png)
-![img_27.png](img_27.png)
-![img_28.png](img_28.png)
-![img_29.png](img_29.png)
-![img_30.png](img_30.png)
-![img_31.png](img_31.png)
-![img_32.png](img_32.png)
-![img_33.png](img_33.png)
-![img_34.png](img_34.png)
+![img_21.png](../img_21.png)
+![img_22.png](../img_22.png)
+![img_23.png](../img_23.png)
+![img_24.png](../img_24.png)
+![img_25.png](../img_25.png)
+![img_26.png](../img_26.png)
+![img_27.png](../img_27.png)
+![img_28.png](../img_28.png)
+![img_29.png](../img_29.png)
+![img_30.png](../img_30.png)
+![img_31.png](../img_31.png)
+![img_32.png](../img_32.png)
+![img_33.png](../img_33.png)
+![img_34.png](../img_34.png)
 
 # Switch Statement
 
@@ -139,10 +139,10 @@ break terminates the loop and continue skips the current iteration and goes to t
 
 Quiz
 
-![img_35.png](img_35.png)
-![img_36.png](img_36.png)
-![img_37.png](img_37.png)
-![img_38.png](img_38.png)
-![img_39.png](img_39.png)
-![img_40.png](img_40.png)
-![img_41.png](img_41.png)
+![img_35.png](../img_35.png)
+![img_36.png](../img_36.png)
+![img_37.png](../img_37.png)
+![img_38.png](../img_38.png)
+![img_39.png](../img_39.png)
+![img_40.png](../img_40.png)
+![img_41.png](../img_41.png)
