@@ -330,6 +330,120 @@ public class Casslec {
 once initialized then run as above example.
 this above is an example of pojo plain old java object.
 
+# Constructor
+Constructor is a special method that is used to initialize objects.
+
+	private String doors = "opened";
+	private String engine = "off";
+	private String driver = "absent";
+	private int speed = 0; /* this is a global entity */
+
+you can manually initialize the values as above but it is not a good practice.
+so we use constructor to initialize the values.
+
+# constructor has same name as class name it has no return type since it does not return anything.'
+constructor is by default called when a object is created hence its the right place to initialize the values.
+
+like this
+package org.studyeasy;
+
+public class Car {
+
+	private String doors;
+	private String engine;
+	private String driver;
+	private int speed; 
+	
+	public Car() {
+		doors = "opened";
+		engine = "off";
+		driver = "absent";
+		speed = 0;
+	}
+
+	public String getDoors() {
+		return doors;
+	}
+	public void setDoors(String doors) {
+		this.doors = doors;
+	}
+	public String getEngine() {
+		return engine;
+	}
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+	public String getDriver() {
+		return driver;
+	}
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	public String run() {
+		if(doors.equals("closed") && engine.equals("on")
+				&& driver.equals("seated") && speed > 0) {
+			return "running";
+		}else 
+			return "not running";
+	}
+}
+
+or for custom values right click on class and select source and then generate constructor using fields.
+![img_5.png](img_5.png)
+
+super method is used to call the constructor of the parent class.
+
+# Overloading of the constructor since they have same name but different parameters.
+
+	public Car() {
+		doors = "opened";
+		engine = "off";
+		driver = "absent";
+		speed = 0;
+	}
+	
+	public Car(String doors, String engine, String driver, int speed) {
+
+		this.doors = doors;
+		this.engine = engine;
+		this.driver = driver;
+		this.speed = speed;
+	}
+
+package org.studyeasy;
+
+public class Casslec {
+
+	public static void main(String[] args) {
+		Car car = new Car("closed","on","seated",10);		
+		System.out.println(car.run());
+	}
+
+}
+
+# Default constructor
+
+When there is no constructor in the class then java will create a default constructor.
+a default constructor is a constructor with no parameters just a statement like this.
+
+public Car() {
+}
+
+if you add the constructor with custom parameters then java will not create a default constructor.
+if both constructors are present then there will be errors. either you create a constructor or let java create a default constructor.
+if you create it using source then it will create a default constructor with no parameters.
+
+# Usage of Constructor
+
+
+
+
 
 
 
