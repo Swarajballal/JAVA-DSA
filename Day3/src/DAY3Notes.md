@@ -111,5 +111,269 @@ public class Demo {
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
+# A method is a code block but it may have inner code blocks
+a for loop is a code block inside a method which itself is a code block.
+
+# Literals in java
+Literals in java are a sequence of characters that represent constant values to be storedin variables.
+
+# Integer Literals
+Literals used for different number systems
+Prefix 0 is used to indicate octal number system and 0x is used to indicate hexadecimal number system.
+here 0 and 0x are literals.
+Prefix 0B/0b is used to indicate binary number system.
+
+# Floating point literals
+Java has two types of floating point literals
+float and double
+Default type is double
+
+float doubleval = 12.25D; // here D is a literal
+for float we use F or f as a literal
+
+It explicitly tells the compiler that the value is of type float or double.
+
+# Character literals
+Assign a character literal for assignment of char variable.
+char x = 'v';
+char m = 062;
+
+ANSI chart for more details.
+
+# Escape sequences
+
+Escapes or Unescapes is a string removing traces of offending characters that could prevent compiling.
+
+Backspace is replaced with \b
+Newline is replaced with \n
+Tab is replaced with \t
+Carriage return is replaced with \r
+Form feed is replaced with \f
+Single quote is replaced with \'
+Double quote is replaced with \"
+Backslash is replaced with \\
+
+# Null literal
+Null is not a keyword,null is a literal used to specify null value (nothing) for an element.
+
+# Boolean literals
+The values true and false are literals in java.
+true means correct and false means incorrect.
+
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+
+
+# Classes and objects OOPS
+Class is a blueprint for creating objects.
+Objects are instances of a class.
+Const should have naming in UpperCase.
+Class should have naming in CamelCase.
+properties and state are same.
+behaviour and methods (functionality) are same.
+Properties or states are usually private and methods or functionality are public.
+
+So to access the properties we use getters and setters methods.
+Default of int is 0;
+
+package org.studyeasy;
+
+public class Casslec {
+
+	public static void main(String[] args) {
+		Car car = new Car();
+		car.setSpeed(10);    // public method setSpeed
+		System.out.println(car.getSpeed());   // public method getSpeed
+		
+		
+	}
+
+}
+
+package org.studyeasy;
+
+public class Car {
+private String doors;
+private String engine;
+private String driver;
+private int speed;       /* this is a global entity */
+
+	public void setSpeed(int speed) {   // in this function the parameter speed is a local entity since it is is passed as a parameter in local scope. so it wont be accessible out of this function.
+                                        //hence there will be a error to access the global speed which is passed as a parameter
+                                        // You need to use "this" keyword we made a function getSpeed() and setSpeed() to be accessed by the main function.
+                                        // while keeping properties private.
+		this.speed = speed;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+}
+
+![img_4.png](img_4.png)
+other way is to select the class as in image then right click and select source and then generate getters and setters.
+
+package org.studyeasy;
+
+public class Car {
+
+	public String getDoors() {
+		return doors;
+	}
+	public void setDoors(String doors) {
+		this.doors = doors;
+	}
+	public String getEngine() {
+		return engine;
+	}
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+	public String getDriver() {
+		return driver;
+	}
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	private String doors;
+	private String engine;
+	private String driver;
+	private int speed; /* this is a global entity */
+
+}
+
+package org.studyeasy;
+
+public class Casslec {
+
+	public static void main(String[] args) {
+		Car car = new Car();
+		car.setDoors("closed");
+		System.out.println(car.getDoors());
+	}
+
+}
+
+# Classes-Adding 
+functionality into class
+functionality means let say running a car.
+speed, doors, engine, driver are properties of a car or states of a car.
+
+# To check strings in java use classObjects.equals("string");
+make sure values are initialized before using them else it will lead to null pointer exception.
+
+
+package org.studyeasy;
+
+public class Car {
+
+	public String getDoors() {
+		return doors;
+	}
+	public void setDoors(String doors) {
+		this.doors = doors;
+	}
+	public String getEngine() {
+		return engine;
+	}
+	public void setEngine(String engine) {
+		this.engine = engine;
+	}
+	public String getDriver() {
+		return driver;
+	}
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	public String run() {
+		if(doors.equals("closed") && engine.equals("on")
+				&& driver.equals("seated") && speed > 0) {
+			return "running";
+		}else 
+			return "not running";
+	}
+	private String doors;
+	private String engine;
+	private String driver;
+	private int speed; /* this is a global entity */
+}
+
+
+package org.studyeasy;
+
+public class Casslec {
+
+	public static void main(String[] args) {
+		Car car = new Car();
+		car.setDoors("closed");
+		car.setDriver("seated");
+		car.setEngine("on");
+		car.setSpeed(10);
+		System.out.println(car.run());
+	}
+
+}
+
+once initialized then run as above example.
+this above is an example of pojo plain old java object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
