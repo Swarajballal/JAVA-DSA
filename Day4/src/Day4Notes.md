@@ -454,15 +454,61 @@ private String	musicSystem;
 private String airConditioner;
 private int	container;
 
-
 }
 
+when a object is printed it directly calls the toString() method of the object class. but we can override it.
+![img_1.png](img_1.png)
+highlight the file then right click and select source and generate toString() method.
+select values from the methods and inherit methods. make sure to not select getClass() hascode and toString() methods.
+
+# to see how constructors getter setters inheritance and toString() super() works see section 8 working with inheritance challenge folder 
+all files of vehicle, demo, bike, car, truck are there.
+
+# Overriding methods in inheritance
+
+let's say you write a method in parent class
+
+public void run() {
+System.out.println("Vehicle is running");
+}
+ and same method in child class lets say bike to have the exact same method.
+# then when you call the method from child class object it will call the method from child class and not from parent class. by calling bike.run();
+if run method is only in parent class then it will call the method from parent class.
+
+# Type of inheritance and exercise information.
+1. Single inheritance: when a class inherits from only one class. where parent is known as parent class and child is known as child class or subclass.
+2. Multiple inheritance: when a class inherits from more than one class. multiple inheritance is not allowed in java. because of ambiguity. parent classes may have same methods names and properties. so it is not allowed in java. you may get run time error.
+3. Hierarchical inheritance: when one parent class is inherited by multiple child classes.
+4. Multi-level inheritance: when a class inherits from a class which is already a child class of another class. in java parent class are known as super class and child clasas are known as subclass.
+5. Hybrid inheritance: when a class is inherited from multiple classes and one of the parent class is inherited by another class. it is not allowed in java.
+![img_2.png](img_2.png) might give error same reason as multiple inheritance.
+if methods are not same then it will work.
 
 
+Exercise:
+class animal: parent class
+properties: height, weight, animalType, bloodType
 
+class reptile: child class
+properties: Dry skin, backbone, soft-shelled eggs
 
+class Fish : child class
+properties: live in water, has gills
 
+class Birds: child class
+properties: Animals with feathers, can fly
 
+class Crocodile: child class of reptile
+properties: hard-shelled eggs, shovInfo() will give all the information about the crocodile.
+override  soft-shelled eggs to hard-shelled eggs.
+
+class Eel: child class of fish
+properties: release electric charge, shovInfo() will give all the information about the Eel.
+
+class Eagle: child class of birds
+properties: shovInfo() will give all the information about the Eagle.
+
+add shovent() method in all the classes.
 
 
 
