@@ -510,13 +510,190 @@ properties: shovInfo() will give all the information about the Eagle.
 
 add shovent() method in all the classes.
 
+see test-inheritance folder for all the files. for solution. # Default values exercise t
 
+Protected is used when we want to access the properties of parent class in child class. but we don't want to access it outside the package.
+private when you don't need to access it outside the class.
 
+To string is a method through which we can print the object of a class. it is a method of object class. we can override it.
+we can print the values of the properties of the object.
 
+# Composition
+Composition is used where inheritance is not possible.
+where multiple components work together to create a single entity.
+For example:
+Laptop computer and mobile phone.
+components of laptop are keyboard, mouse, screen, motherboard, processor, ram, hard disk, battery, charger.
+These components are simple in few cases and complex in few cases.
+list of components:
+Simple components:
+screen -> Full HD/HD
+Ram -> 4GB/8GB/16GB
+Hard disk -> 1TB/2TB
 
+Complex components:
+Graphics card -> Complex component
+optical drive -> single layer/dual layer
+keyboard -> mechanical/membrane
 
+Processor:
+Brand
+Generation
+Cores
+Clock speed
+series
+cache memory
 
+Graphics card:
+Brand
+Memory
+series
 
+# So for a Composition of Laptop
+class: Laptop
+screen -> Property
+Ram -> Property
+Hard disk -> Property
+Graphics card -> Class
+optical drive -> Property
+keyboard -> Property
+Processor -> Class
+
+package org.studyeasy;
+
+import org.studyeasy.laptop.Laptop;
+
+public class Hello {
+
+	public static void main(String[] args) {
+		Laptop lappy = new Laptop();
+		System.out.println(lappy);
+
+	}
+
+}
+
+package org.studyeasy.laptop;
+
+import org.studyeasy.laptop.components.GraphicsCard;
+import org.studyeasy.laptop.components.Processor;
+
+public class Laptop {
+
+	private float screen;
+	private Processor processor;
+	private String ram;
+	private String hardDrive;
+	private GraphicsCard graphicsCard;
+	private String opticalDrive;
+	private String keyboard;
+
+	public Laptop() {
+
+		this.screen = 15.6f;
+		this.processor = new Processor();
+		this.ram = "DDR4";
+		this.hardDrive = "2TB";
+		this.graphicsCard = new GraphicsCard();
+		this.opticalDrive = "MLT layer";
+		this.keyboard = "backlit";
+	}
+
+	public Laptop(float screen, Processor processor, String ram, String hardDrive, GraphicsCard graphicsCard,
+			String opticalDrive, String keyboard) {
+		super();
+		this.screen = screen;
+		this.processor = processor;
+		this.ram = ram;
+		this.hardDrive = hardDrive;
+		this.graphicsCard = graphicsCard;
+		this.opticalDrive = opticalDrive;
+		this.keyboard = keyboard;
+	}
+
+	@Override
+	public String toString() {
+		return "Laptop [screen=" + screen + ", processor=" + processor + ", ram=" + ram + ", hardDrive=" + hardDrive
+				+ ", graphicsCard=" + graphicsCard + ", opticalDrive=" + opticalDrive + ", keyboard=" + keyboard + "]";
+	}
+
+}
+
+package org.studyeasy.laptop.components;
+
+public class GraphicsCard {
+private String brand;
+private int series;
+private String memory;
+
+	public GraphicsCard() {
+		this.brand = "Nvidia";
+		this.series = 940;
+		this.memory = "2 GB";
+	}
+
+	public GraphicsCard(String brand, int series, String memory) {
+
+		this.brand = brand;
+		this.series = series;
+		this.memory = memory;
+	}
+
+	@Override
+	public String toString() {
+		return "GraphicsCard [brand=" + brand + ", series=" + series + ", memory=" + memory + "]";
+	}
+
+}
+
+package org.studyeasy.laptop.components;
+
+public class Processor {
+private String brand;
+private String series;
+private int generation;
+private int cores;
+private int threads;
+private String cacheMemory;
+private String frequency;
+private String minFrequency;
+private String maxfrequency;
+
+	public Processor() {
+		this.brand = "intel";
+		this.series = "i5 7200u";
+		this.generation = 7;
+		this.cores = 2;
+		this.threads = 4;
+		this.cacheMemory = "3MB";
+		this.frequency = "2.5Ghz";
+		this.minFrequency = "2.5Ghz";
+		this.maxfrequency = "3.1Ghz";
+		
+	}
+
+	public Processor(String brand, String series, int generation, int cores, int threads, String cacheMemory,
+			String frequency, String minFrequency, String maxfrequency) {
+
+		this.brand = brand;
+		this.series = series;
+		this.generation = generation;
+		this.cores = cores;
+		this.threads = threads;
+		this.cacheMemory = cacheMemory;
+		this.frequency = frequency;
+		this.minFrequency = minFrequency;
+		this.maxfrequency = maxfrequency;
+	}
+
+	@Override
+	public String toString() {
+		return "Processor [brand=" + brand + ", series=" + series + ", generation=" + generation + ", cores=" + cores
+				+ ", threads=" + threads + ", cacheMemory=" + cacheMemory + ", frequency=" + frequency
+				+ ", minFrequency=" + minFrequency + ", maxfrequency=" + maxfrequency + "]";
+	}
+
+}
 
 
 
