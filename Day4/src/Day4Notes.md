@@ -695,6 +695,42 @@ private String maxfrequency;
 
 }
 
+# Working with composition 
+
+# Encapsulation
+
+# Polymorphism
+Poly means many and morphism means forms.
+it means multiple forms. It helps us to provide multiple forms for a object.
+It is also known as late binding or dynamic binding or runtime binding.
+
+#### phone.java
+package org.studyeasy.phone;
+
+public class Phone {
+private String model;
+
+	public Phone(String model) {
+		this.model = model;
+	}
+    
+	public void features(){
+		System.out.println("Feature phone");
+	}
+	
+
+	public String getModel() {
+		return model;
+	}
+
+}
+
+ 
+
+
+
+
+
 
 
 
