@@ -1131,15 +1131,99 @@ private String maxfrequency;
 
 }
 
-
-
-
 # Encapsulation
+
+Encapsulation is used to hide the data from outside world. it is also known as data hiding.
+difference between hiding and encapsulation is that in encapsulation we provide the access to the data through methods.
+in hiding we don't provide access to the data.
+if access specifier is public then it by default provides setter without calling setter in the class or child class.
+if private
+if value for a property is not specified then and created a object then it will put value as null for string.
+if setter method we can apply restrictions to the value of the property.
+
+package org.studyeasy;
+
+public class Hello {
+
+	public static void main(String[] args) {
+		Person john = new Person();
+		System.out.println(john);
+		Person pooja = new Person("Pooja",26,"Female");
+		System.out.println(pooja);
+		pooja.setAge(-30);
+		System.out.println(pooja);
+
+	}
+
+}
+
+
+package org.studyeasy;
+
+public class Person {
+private String name;
+private int age;
+private String gender;
+
+	public Person() {
+		this.name = "John Doe";
+		this.age = 25;
+		this.gender = "Male";
+	}
+
+	public Person(String name, int age, String gender) {
+
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+
+	public boolean setAge(int age) {
+		if(age >= 0 && age <= 100){
+			this.age = age;
+			return true;
+		}
+		return false;	
+		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + ", gender=" + gender + "]";
+	}
+}
+
+there is no compile time error but there is run time error.
+so if not valid value is passed then it will not set the value and store default value.
+if age is passed -30 it will not set age as -30 instead pput default value as 26. as previous since it returned false.
+
+prefer to use parameterized constructor instead of default constructor. it will throw error if not valid value is passed.
 
 # Polymorphism
 Poly means many and morphism means forms.
 it means multiple forms. It helps us to provide multiple forms for a object.
 It is also known as late binding or dynamic binding or runtime binding.
+polymorphism is closely related to inheritance.
+polymorphism is a type of inheritance.
+
+samsung not 8 is a phone.
+Phone note8 = new SamsungNote8("Note 8");
+
+note 8 will have two verison of features method. one from phone class and one from samsungnote8 class.
+it will call the method from samsungnote8 class because it is the child class of phone class.
+if not present in child class then it will call the method from parent class.
 
 #### phone.java
 package org.studyeasy.phone;
@@ -1154,13 +1238,170 @@ private String model;
 	public void features(){
 		System.out.println("Feature phone");
 	}
-	
 
 	public String getModel() {
 		return model;
 	}
 
 }
+
+### Nokia3310.java
+
+package org.studyeasy.phone;
+
+public class Nokia3310 extends Phone {
+
+	public Nokia3310(String model) {
+		super(model);
+	}
+
+}
+
+### Hello.java
+
+package org.studyeasy;
+import org.studyeasy.phone.Nokia3310;
+import org.studyeasy.phone.Phone;
+import org.studyeasy.phone.SamsungNote8;
+
+public class Hello {
+
+	public static void main(String[] args) {
+		
+		Phone phone = new Phone("Nokia 3310");
+		phone.features();
+		System.out.println(phone.getModel());
+		
+		Phone note8 = new SamsungNote8("Note 8");
+		System.out.println(note8.getModel());
+		note8.features();
+		
+		Phone nokia3310 = new Nokia3310("Nokia 3310");
+		System.out.println(nokia3310.getModel());
+		nokia3310.features();
+		
+		
+	}
+
+}
+
+### SamsungNote8.java
+
+package org.studyeasy.phone;
+
+public class SamsungNote8 extends Phone{
+
+	public String model;
+
+	public SamsungNote8(String model) {
+		super(model);
+	}
+	
+	public void features(){
+		System.out.println("Andriod flagship");
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+}
+
+
+# PolyMorphism part 2
+
+A static method is a method that belongs to a class rather than an instance of a class. 
+This means you can call a static method without creating an object of the class. Static methods are sometimes called class methods.
+
+that means if ststic you can directly call main() for function main but if not static you need to create an object 
+like below for calling phone, since class is Hello so new Hello().phone(1); for calling phone method.
+
+
+package org.studyeasy;
+
+import org.studyeasy.phone.Nokia;
+import org.studyeasy.phone.Phone;
+import org.studyeasy.phone.Samsung;
+
+public class Hello {
+
+	public static void main(String[] args) {
+		
+		
+		Phone nokia3310 = new Hello().phone(1);
+		System.out.println(nokia3310.getModel());
+		nokia3310.features();
+		
+		
+		
+		Phone note8 =  new Hello().phone(2);
+		System.out.println(note8.getModel());
+		note8.features();
+		
+	
+	
+	}
+	
+	public Phone phone(int dailyDriver){
+		switch(dailyDriver){
+		case 1: return new Nokia("3310");
+		case 2: return new Samsung("Note 5");
+		}
+		return null;
+	}
+
+}
+
+package org.studyeasy.phone;
+
+public class Phone {
+private String model;
+
+	public Phone(String model) {
+		this.model = model;
+	}
+    
+	public void features(){
+		System.out.println("Feature phone");
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+}
+
+
+package org.studyeasy.phone;
+
+public class Nokia extends Phone {
+
+	public Nokia(String model) {
+		super(model);
+	}
+
+}
+
+
+package org.studyeasy.phone;
+
+public class Samsung extends Phone{
+
+	public Samsung(String model) {
+		super(model);
+	}
+	
+	public void features(){
+		System.out.println("Andriod flagship");
+	}
+
+}
+
+
+## Benefits of polymorphism
+
+smart switching is also called as dynamic binding or late binding or runtime binding.
+
 
 
 
