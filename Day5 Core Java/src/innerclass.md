@@ -81,3 +81,114 @@ public class Shop {
 # Local inner class
 
 
+package org.studyeasy.shop;
+
+public class Door {
+
+	public boolean isLocked(String key) {
+
+		class Lock {
+			public boolean isLocked(String key) {
+				if (key.equals("qwerty")) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}
+		return new Lock().isLocked(key);
+	}
+
+}
+
+package org.studyeasy;
+
+import org.studyeasy.shop.Door;
+
+public class Shop {
+
+	public static void main(String[] args) {
+		Door door = new Door();
+		if(door.isLocked(args[0])){
+			System.out.println("Shop has closed, visit later");
+		}else{
+			System.out.println("Welcome, we are open :)");
+		}
+		System.out.println(args[1]);
+		System.out.println(args[2]);
+
+
+	}
+}
+
+
+# anonymous object
+
+same above code but we don't need to create a object of lock class we can directly access it.
+instead of this
+Door door = new Door();
+if(door.isLocked(args[0])){
+System.out.println("Shop has closed, visit later");
+}else{
+System.out.println("Welcome, we are open :)");
+}
+
+it will be
+
+if(new Door().isLocked(args[0])){
+System.out.println("Shop has closed, visit later");
+}else{
+System.out.println("Welcome, we are open :)");
+}
+
+# anonymous inner class
+
+what are anonymous inner class?
+anonymous inner class is a class without a name. it is used to override a method of a class or interface.
+anonynous methods are declared in abstract class but where ever they are called they are mandatory to override or implement the method.
+anonynous objects don't need to imported as long as they are in the same package and can be created without a name.
+package org.studyeasy;
+
+import org.studyeasy.shop.Door;
+
+public class Shop {
+
+	public static void main(String[] args) {
+		Door door = new Door();
+		if(door.getLock().isUnlocked(args[0])){
+			System.out.println("Welcome, we are open");
+		}else{
+			System.out.println("We are closed now, please visit later");
+		}
+
+	}
+
+}
+
+
+package org.studyeasy.shop;
+
+public class Door{
+private Lock lock = new Lock(){
+
+		@Override
+		public boolean isUnlocked(String keyCode) {
+			if(keyCode.equals("qwerty")){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+	};
+	public Lock getLock() {
+		return lock;
+	}
+
+}
+
+package org.studyeasy.shop;
+
+public abstract class Lock{
+public abstract boolean isUnlocked(String keyCode);
+}
