@@ -269,3 +269,279 @@ static variable has an independent memory location. it has a single copy of vari
 Static elements needs to be accessed by static methods only.
 since it is a static method you don't need to create a object of the class to access the static variable or method.
 but we cant make static class java doesn't allow it but there is a way to do it.
+
+#### static inner class
+
+you can't mark outer class as static but you can mark inner class as static.
+to access the methods as well as the property or method they have to be public.
+also the way to access them is outerclassname.innerclassname.methodname();
+and to access the property outerclassname.innerclassname.propertyname;
+
+```java
+
+package org.studyeasy.demo;
+
+public class Outer {
+	
+	
+	public static class Inner {
+        public static int x = 0;
+		public static void testingInnerMethod() {
+			System.out.println("Testing inner class method.");
+		}
+	}
+
+}
+
+package org.studyeasy;
+
+        import org.studyeasy.demo.Outer;
+
+public class App {
+
+   public static void main(String[] args) {
+      Outer.Inner.testingInnerMethod();
+      System.out.println(Outer.Inner.x);
+   }
+
+}
+
+```
+
+if you want to access a outer class variable from a static inner class then you need to create an object of 
+outer class and then access the variable and then use it in the static inner class. but it is not a good way second way is if you make 
+the outer property as static then you can access it directly from the static inner class so even if it is private variable then too it can access
+the variable. that means inner class can access the private variable or method of outer class without creating an object.
+how can we access the static inner class elements (methods, variables/properties) and properties from the outer class.
+inner_class_name.variable_name;
+inner_class_name.method_name();
+if the method is static you can use it in diffrent class without making an object just by writing classname.methodname();
+but if it is non-static method then you need to create an object of the class and then use it. new classname().methodname();
+methods needs to be public to access them from outside the class.
+
+```java
+package org.studyeasy.demo;
+
+public class Outer {
+	
+	public static void testOuterMethod(){
+		System.out.println("Value of inner class variable: "+Inner.x);
+		Inner.testingInnerMethod();
+	}
+	
+	public static class Inner {
+        public static int x = 0;
+		public static void testingInnerMethod() {
+			System.out.println("Testing inner class method.");
+		}
+	}
+
+}
+
+package org.studyeasy;
+
+        import org.studyeasy.demo.Outer;
+
+public class App {
+
+   public static void main(String[] args) {
+      Outer.testOuterMethod();
+   }
+
+}
+
+```
+#### Final keyword
+
+we can assign final to a variable, method and class.
+if you assign final to a variable you can't assign setter method to it. if you have already assigned a value to a variable then you can't
+reassign it using a parameterized constructor, and let say you didn't declare the value of a final variable then the default constructor will 
+complain and you wont't be able to use it.
+when a vairable is marked final reassignment is not possible and if we have initialized the variable then we can't use default constructor 
+and parameterized constructor.
+
+```java
+package org.studyeasy;
+
+public class B extends A{
+private final int x;
+
+
+	public B(int x) {
+		super();
+		this.x = x;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+}
+
+package org.studyeasy;
+
+public class App {
+
+	public static void main(String[] args) {
+	
+		B obj1 = new B(12);
+		System.out.println(obj1.getX());
+		
+		
+	}
+
+}
+
+package org.studyeasy;
+
+public class A {
+
+}
+```
+
+#### final keyword with class and method
+
+you can't override a method if it has final indentifier.
+if you want to apply final to all class instead of writing final in all class you can directly write class as final.
+if you mark a class as final then you can't have subclass of that class or have a child class extends it properties if done using inheritance 
+that means you have explictly write the method for child class since it won't be able to inherit parent class methods. since overriding is not
+possible if marked final.
+inheritance is not applicable for final classes so you have to remove final keyword from class.
+```java
+
+package org.studyeasy;
+
+public final class A {
+   public  void india(){
+      System.out.println("India is amazing!");
+   }
+
+   public  void USA(){
+      System.out.println("USA is fantastic");
+   }
+
+}
+
+package org.studyeasy;
+
+public class App {
+
+   public static void main(String[] args) {
+
+      B obj1 = new B();
+      obj1.india();
+      obj1.USA();
+
+   }
+
+}
+
+package org.studyeasy;
+
+public class B{
+   private final int x =1;
+
+
+   public int getX() {
+      return x;
+   }
+
+   public void india() {
+      System.out.println("Hello India, what's up?");
+   }
+
+   public  void USA(){
+      System.out.println("USA is fantastic");
+   }
+
+
+}
+
+```
+
+#### Packages
+
+```java
+
+package org.studeasy.platform;
+
+public class Java {
+	public void usedFor(){
+		System.out.println("Platform..");
+	}
+
+}
+
+package org.studeasy.blog;
+
+public class Java {
+   public void userFor(){
+      System.out.println("Blogging..");
+   }
+
+}
+
+package org.studeasy;
+
+        import org.studeasy.blog.Java;
+
+public class App {
+
+   public static void main(String[] args) {
+      Java blog = new Java();
+      blog.userFor();
+
+
+   }
+
+}
+
+```
+packages are a collection of src which has java files etc file.
+now packages_name.  here package_name is the main package and . is to create sub related packages.
+same name for multiple classes is not allowed in java so we use packages to differentiate between them. so we can have same name for classes
+in different packages. wildcard '*' everything. directly you can't import and use them with class type and make an object. java will skip it and won't
+give sugesstion for the method with same name in other class it will only show one.to get other you have to explicitly type package_name.related_package_name.class_name objectname = 
+new package_name.related_package_name.class_name(); with this way we can remove the import statement.
+see below example. 
+
+```java
+
+package org.studeasy;
+
+import org.studeasy.blog.Java;
+
+
+public class App {
+
+   public static void main(String[] args) {
+      Java blog = new Java();
+      blog.userFor();
+
+      org.studeasy.platform.Java platform = new org.studeasy.platform.Java();
+      platform.usedFor();
+
+   }
+
+}
+
+package org.studeasy.blog;
+
+public class Java {
+   public void userFor(){
+      System.out.println("Blogging..");
+   }
+
+}
+
+package org.studeasy.platform;
+
+public class Java {
+   public void usedFor(){
+      System.out.println("Platform..");
+   }
+
+}
+
+```
+
